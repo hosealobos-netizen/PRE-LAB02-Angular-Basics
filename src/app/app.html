@@ -1,0 +1,70 @@
+
+<main class="resume">
+
+  <header class="intro">
+    <div class="profile-label">PERSONAL PORTFOLIO</div>
+
+    <h1>{{ fullName }}</h1>
+
+    <p class="contact">
+      {{ location }} |
+      {{ phone }} |
+      <a [href]="'mailto:' + email">{{ email }}</a>
+    </p>
+
+    <p class="tagline">
+      Aspiring Web Developer | Creative Thinker | Lifelong Learner
+    </p>
+  </header>
+
+  <section>
+    <h2>Personal Profile</h2>
+    <p>{{ profile }}</p>
+  </section>
+
+  <app-profile-card></app-profile-card>
+
+  <section>
+    <h2>Key Skills</h2>
+
+    <ul class="skills-list">
+      @for (skill of skills; track skill) {
+        <li>{{ skill }}</li>
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2>Technical Proficiencies</h2>
+
+    <div class="proficiency-list">
+      @for (item of proficiencies; track item.category) {
+        <div class="proficiency-card">
+          <h3>{{ item.category }}</h3>
+          <p>{{ item.technologies }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="interaction">
+    <h2>Let's Interact!</h2>
+
+    <p>{{ message }}</p>
+
+    <button (click)="showMessage()">
+      Click Me
+    </button>
+
+    <p class="click-count">
+      Total clicks: {{ clickCount }}
+    </p>
+  </section>
+
+  <footer>
+    <p>Designed with creativity and passion by {{ fullName }}.</p>
+    <p>© 2026 | Personal CV Website</p>
+  </footer>
+
+</main>
+
